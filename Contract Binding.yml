@@ -1,0 +1,2483 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: Contract Binding
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: kalochin/pdf_process:1.0.0@052e5c10b080c86e949055c64575647737c2e14947b0b1bc87a44d1c6ed0f1de
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: kenwood/gpt4o_ocr_pdf:0.0.2@5f114c73bd0ce4172e483c5e4b609df8b6fb5e1932244ba4e813dc8d1b209ab7
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.3.4@3345b596ee5117d9304097feaee866f05ffaf0d76a790fb07acd8b99f6c87cb3
+    version: null
+kind: app
+version: 0.5.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 20
+        audio_file_size_limit: 50
+        batch_count_limit: 50
+        file_size_limit: 150
+        file_upload_limit: 20
+        image_file_batch_limit: 100
+        image_file_size_limit: 200
+        single_chunk_attachment_limit: 100
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 100
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: iteration
+      id: 1772287129940-source-1772287431145-target
+      selected: false
+      source: '1772287129940'
+      sourceHandle: source
+      target: '1772287431145'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: iteration
+      id: 1772287431145-source-1772287503357-target
+      selected: false
+      source: '1772287431145'
+      sourceHandle: source
+      target: '1772287503357'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772287503357'
+        sourceType: iteration-start
+        targetType: llm
+      id: 1772287503357start-source-1772287537313-target
+      selected: false
+      source: 1772287503357start
+      sourceHandle: source
+      target: '1772287537313'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: iteration
+      id: 1772287150945-source-1772287503357-target
+      selected: false
+      source: '1772287150945'
+      sourceHandle: source
+      target: '1772287503357'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: llm
+      id: 1772287503357-source-1772296744760-target
+      selected: false
+      source: '1772287503357'
+      sourceHandle: source
+      target: '1772296744760'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: iteration
+      id: 1772287129940-source-1772296789655-target
+      selected: false
+      source: '1772287129940'
+      sourceHandle: source
+      target: '1772296789655'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772296789655'
+        sourceType: iteration-start
+        targetType: llm
+      id: 1772296789655start-source-1772296806371-target
+      selected: false
+      source: 1772296789655start
+      sourceHandle: source
+      target: '1772296806371'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: http-request
+      id: 1772287129940-source-1772296856866-target
+      selected: false
+      source: '1772287129940'
+      sourceHandle: source
+      target: '1772296856866'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: llm
+      id: 1772296856866-source-1772296899518-target
+      selected: false
+      source: '1772296856866'
+      sourceHandle: source
+      target: '1772296899518'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: http-request
+      id: 1772296899518-source-1772296930747-target
+      selected: false
+      source: '1772296899518'
+      sourceHandle: source
+      target: '1772296930747'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: llm
+      id: 1772296930747-source-1772296959500-target
+      selected: false
+      source: '1772296930747'
+      sourceHandle: source
+      target: '1772296959500'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: llm
+      id: 1772296930747-source-1772296985368-target
+      selected: false
+      source: '1772296930747'
+      sourceHandle: source
+      target: '1772296985368'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: iteration
+      id: 1772296959500-source-1772297006911-target
+      selected: false
+      source: '1772296959500'
+      sourceHandle: source
+      target: '1772297006911'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772297006911'
+        sourceType: iteration-start
+        targetType: http-request
+      id: 1772297006911start-source-1772297020170-target
+      selected: false
+      source: 1772297006911start
+      sourceHandle: source
+      target: '1772297020170'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: iteration
+      id: 1772296985368-source-1772297006911-target
+      selected: false
+      source: '1772296985368'
+      sourceHandle: source
+      target: '1772297006911'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: llm
+      id: 1772296789655-source-1772297137556-target
+      selected: false
+      source: '1772296789655'
+      sourceHandle: source
+      target: '1772297137556'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: iteration
+        targetType: llm
+      id: 1772297006911-source-1772297137556-target
+      selected: false
+      source: '1772297006911'
+      sourceHandle: source
+      target: '1772297137556'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1772296744760-source-1772297264348-target
+      selected: false
+      source: '1772296744760'
+      sourceHandle: source
+      target: '1772297264348'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1772297137556-source-1772297264348-target
+      selected: false
+      source: '1772297137556'
+      sourceHandle: source
+      target: '1772297264348'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1772297264348-source-1772297300953-target
+      selected: false
+      source: '1772297264348'
+      sourceHandle: source
+      target: '1772297300953'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: http-request
+      id: 1772297342352-source-1772297451524-target
+      selected: false
+      source: '1772297342352'
+      sourceHandle: source
+      target: '1772297451524'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: end
+      id: 1772297451524-source-1772297558503-target
+      selected: false
+      source: '1772297451524'
+      sourceHandle: source
+      target: '1772297558503'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772287431145'
+        sourceType: iteration-start
+        targetType: tool
+      id: 1772287431145start-source-1772639877001-target
+      selected: false
+      source: 1772287431145start
+      sourceHandle: source
+      target: '1772639877001'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772287431145'
+        sourceType: tool
+        targetType: tool
+      id: 1772639877001-source-1772639888818-target
+      selected: false
+      source: '1772639877001'
+      sourceHandle: source
+      target: '1772639888818'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1772287129940-source-1772689817410-target
+      selected: false
+      source: '1772287129940'
+      sourceHandle: source
+      target: '1772689817410'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: llm
+      id: 1772689817410-source-1772287150945-target
+      selected: false
+      source: '1772689817410'
+      sourceHandle: source
+      target: '1772287150945'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772287503357'
+        sourceType: llm
+        targetType: llm
+      id: 1772287537313-source-1772720032278-target
+      selected: false
+      source: '1772287537313'
+      sourceHandle: source
+      target: '1772720032278'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1772287129940-source-1772720659786-target
+      selected: false
+      source: '1772287129940'
+      sourceHandle: source
+      target: '1772720659786'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1772720659786-source-1772720708146-target
+      selected: false
+      source: '1772720659786'
+      sourceHandle: source
+      target: '1772720708146'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: http-request
+      id: 1772720708146-source-1772720780372-target
+      selected: false
+      source: '1772720708146'
+      sourceHandle: source
+      target: '1772720780372'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: http-request
+      id: 1772296959500-source-1772720780372-target
+      selected: false
+      source: '1772296959500'
+      sourceHandle: source
+      target: '1772720780372'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: http-request
+      id: 1772296985368-source-1772720780372-target
+      selected: false
+      source: '1772296985368'
+      sourceHandle: source
+      target: '1772720780372'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: http-request
+      id: 1772720780372-source-17727236238260-target
+      selected: false
+      source: '1772720780372'
+      sourceHandle: source
+      target: '17727236238260'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: llm
+      id: 17727236238260-source-1772720936990-target
+      selected: false
+      source: '17727236238260'
+      sourceHandle: source
+      target: '1772720936990'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1772297300953-source-1775381994992-target
+      selected: false
+      source: '1772297300953'
+      sourceHandle: source
+      target: '1775381994992'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: http-request
+      id: 1775381994992-source-1772297342352-target
+      selected: false
+      source: '1775381994992'
+      sourceHandle: source
+      target: '1772297342352'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1772720936990-source-1775381994992-target
+      selected: false
+      source: '1772720936990'
+      sourceHandle: source
+      target: '1775381994992'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: User Input
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hint: ''
+          label: Section_documents
+          max_length: 100
+          options: []
+          placeholder: ''
+          required: true
+          type: file-list
+          variable: Section_documents
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hint: ''
+          label: Content_Pages
+          max_length: 100
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: Content_pages
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hint: ''
+          label: Cover_page
+          max_length: 48
+          options: []
+          placeholder: ''
+          required: false
+          type: file
+          variable: Cover_page
+        - default: ''
+          hint: ''
+          label: Public_key
+          max_length: 256
+          options: []
+          placeholder: ''
+          required: true
+          type: text-input
+          variable: Public_key
+      height: 187
+      id: '1772287129940'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 71e645f6-4432-45a6-a25c-0c444e47d395
+          role: system
+          text: "System:\nYou extract structured data from PDF text. Output must be\
+            \ valid JSON only.\nUser:\nYou are given the extracted markdown from a\
+            \ PDF content page (table of contents).\nTask: extract the ordered list\
+            \ of section titles exactly in the order shown.\n\nExtracted text: {{#1772689817410.text#}}\n\
+            \nRules:\nOutput JSON with key \"section_titles\" as an array of strings.\n\
+            Exclude page numbers and dot leaders.\nDo not invent titles.\nPreserve\
+            \ the reading order.\nIf a title appears multiple times, include it multiple\
+            \ times.\n\nExpected output schema:\n{\n  \"section_titles\": [\n    \"\
+            Title 1\",\n    \"Title 2\",\n    \"Title 3\"\n  ]\n}\n\n"
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Retrieve Section Titles
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772287150945'
+      position:
+        x: 1006.7067363168633
+        y: 72.60572926148316
+      positionAbsolute:
+        x: 1006.7067363168633
+        y: 72.60572926148316
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 155
+        is_parallel: true
+        iterator_input_type: array[file]
+        iterator_selector:
+        - '1772287129940'
+        - Section_documents
+        output_selector:
+        - '1772639888818'
+        - text
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1772287431145start
+        title: Parse Section Documents
+        type: iteration
+        width: 688
+      height: 155
+      id: '1772287431145'
+      position:
+        x: 447.89142453808677
+        y: 303
+      positionAbsolute:
+        x: 447.89142453808677
+        y: 303
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 688
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1772287431145start
+      parentId: '1772287431145'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 471.89142453808677
+        y: 371
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 208
+        is_parallel: true
+        iterator_input_type: array[string]
+        iterator_selector:
+        - '1772287431145'
+        - output
+        output_selector:
+        - '1772720032278'
+        - text
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1772287503357start
+        title: Connect Content Page with Section Documents
+        type: iteration
+        width: 689.1486983549969
+      height: 208
+      id: '1772287503357'
+      position:
+        x: 1409.548824653576
+        y: 72.60572926148316
+      positionAbsolute:
+        x: 1409.548824653576
+        y: 72.60572926148316
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 689
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1772287503357start
+      parentId: '1772287503357'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 1433.548824653576
+        y: 140.60572926148316
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772287503357'
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 764b759b-53c9-40f6-8410-8508435a954c
+          role: system
+          text: "System:\n\nYou are a title extract agent. You will receive a markdown\
+            \ of a pdf document and a section title list. Find the section title of\
+            \ the pdf document and record the file name. The section title must match\
+            \ in the section title list. If the markdown includes more than one title\
+            \ in the section title list, prioritize the first title the markdown explicitly\
+            \ mentions.\n\nOutput must be valid JSON only.\nUser:\nGiven the first\
+            \ page text of a section PDF, extract the section title as it appears,\
+            \ and then record the file name.\nIf a section title ends with '.0' (for\
+            \ example, '3.0 ABC'), this is the cover page of that section. On the\
+            \ section's first page include only the title text after the number (here\
+            \ 'ABC') and no other content.\n\nRules:\nOutput JSON with keys: \"file_id\"\
+            , \"extracted_title\" and \"evidence\".\n\"evidence\" must be a short\
+            \ exact excerpt from the text that shows the title.\nIf you cannot find\
+            \ a clear title, set extracted_title to \"null\" and explain in evidence.\n\
+            \nOutput as JSON in this format:\n  {\n    \"file_id\": \"...\",\n   \
+            \ \"first_page_text\": \"...\",\n    \"extracted_title\": \"...\",\n \
+            \   \"evidence\": \"...\"\n  }\n/\nProcessed pdf document: {{#1772287503357.item#}}\n\
+            Section title list: {{#1772287150945.text#}}\n"
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Extract Section Titles (Exact Title Shown)
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772287537313'
+      parentId: '1772287503357'
+      position:
+        x: 135.14869835499667
+        y: 65
+      positionAbsolute:
+        x: 1544.6975230085727
+        y: 137.60572926148316
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 5082d2d3-79f6-4544-a1c0-33dbf5454172
+          role: system
+          text: "System:\nYou perform record linkage between TOC titles and section\
+            \ PDFs. Output JSON only.\nUser:\nMatch each TOC title to exactly one\
+            \ section PDF using the extracted first-page titles.\nInputs:\nTOC TITLES\
+            \ (ordered):\n{{#1772287150945.text#}}\nSECTION DOCS:\n{{#1772287503357.output#}}\n\
+            \nRules:\nUse extracted_title as primary matching field.\nEnforce one-to-one\
+            \ assignment (no section file used more than once).\nIf any TOC title\
+            \ cannot be matched confidently, list it in unmatched_toc_titles.\nIf\
+            \ any section doc cannot be used, list it in unmatched_files.\nOutput\
+            \ JSON with keys: ordered_files, unmatched_toc_titles, unmatched_files,\
+            \ notes.\nDo not change ordering: ordered_files must follow TOC order\
+            \ exactly.\nThe file_id is based on the order of the section document\
+            \ array. For example, if the file is in the first item in the array, file_id\
+            \ will be file_01; if the file is in the second item in the array, file_id\
+            \ will be file_02, etc.\n\nOutput as this JSON format:\n{\n  \"ordered_files\"\
+            : [\n    { \"toc_title\": \"Title 1\", \"file_id\": \"file_01\"},\n  \
+            \  { \"toc_title\": \"Title 2\", \"file_id\": \"file_02\"}\n  ],\n  \"\
+            unmatched_titles\": [\"Title X\"],\n  \"unmatched_files\": [\"file_z\"\
+            ],\n  \"notes\": \"...\"\n}\n"
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Match Titles
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772296744760'
+      position:
+        x: 2163.65646048422
+        y: 72.60572926148316
+      positionAbsolute:
+        x: 2163.65646048422
+        y: 72.60572926148316
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 206
+        is_parallel: true
+        iterator_input_type: array[file]
+        iterator_selector:
+        - '1772287129940'
+        - Section_documents
+        output_selector:
+        - '1772296806371'
+        - text
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1772296789655start
+        title: Extract Filenames (Section Documents)
+        type: iteration
+        width: 386
+      height: 206
+      id: '1772296789655'
+      position:
+        x: 477.49014369015504
+        y: 773.7730925567305
+      positionAbsolute:
+        x: 477.49014369015504
+        y: 773.7730925567305
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 386
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1772296789655start
+      parentId: '1772296789655'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 501.49014369015504
+        y: 841.7730925567305
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772296789655'
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 78a26d57-ca59-42e4-b86c-6a30cd217dd4
+          role: system
+          text: 'I only want the file name of the pdf. No need to open the file or
+            get the access. Return the filename.
+
+
+            PDF:  {{#1772296789655.item.name#}}'
+        retry_config:
+          max_retries: 5
+          retry_enabled: true
+          retry_interval: 5000
+        selected: false
+        title: Extract Filenames
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772296806371'
+      parentId: '1772296789655'
+      position:
+        x: 123.22746574038683
+        y: 65
+      positionAbsolute:
+        x: 600.7176094305419
+        y: 838.7730925567305
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-123
+            key: ''
+            type: text
+            value: "{\n  \"public_key\": \"{{#1772287129940.Public_key#}}\"\n}"
+          type: json
+        headers: Content-type:application/json
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 5
+          retry_enabled: true
+          retry_interval: 5000
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Authentication
+        type: http-request
+        url: https://api.ilovepdf.com/v1/auth
+        variables: []
+      height: 138
+      id: '1772296856866'
+      position:
+        x: 477.49014369015504
+        y: 985.2908903035461
+      positionAbsolute:
+        x: 477.49014369015504
+        y: 985.2908903035461
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: dfb63ca7-a486-477f-a4a2-7aa758bf2c5c
+          role: system
+          text: 'You will receive a body message. Extract the token and delete title
+            and punctuation.
+
+
+            Example:
+
+            Body message:{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcGkuaWxvdmVwZGYuY29tIiwiYXVkIjoiIiwiaWF0IjoxNzcxNzY3OTQ3LCJuYmYiOjE3NzE3Njc5NDcsImV4cCI6MTc3MTc3MTU0NywianRpIjoicHJvamVjdF9wdWJsaWNfODhlZmI4Y2Q3NTM4ZTRlN2Q3MjE1NTYyYmMyMDMwYzRfUXJWMVAyYTJjNTQzZjg3ZjliYjY2YjRiMGQ5MTBiNDYxZDFlMCJ9._75CxZB3u54wen9UriwiKwr4ut_l67MkzCVw46b9SAY\"}
+
+            Return: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcGkuaWxvdmVwZGYuY29tIiwiYXVkIjoiIiwiaWF0IjoxNzcxNzY3OTQ3LCJuYmYiOjE3NzE3Njc5NDcsImV4cCI6MTc3MTc3MTU0NywianRpIjoicHJvamVjdF9wdWJsaWNfODhlZmI4Y2Q3NTM4ZTRlN2Q3MjE1NTYyYmMyMDMwYzRfUXJWMVAyYTJjNTQzZjg3ZjliYjY2YjRiMGQ5MTBiNDYxZDFlMCJ9._75CxZB3u54wen9UriwiKwr4ut_l67MkzCVw46b9SAY
+
+
+            Body message is here: {{#1772296856866.body#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Extract server token
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772296899518'
+      position:
+        x: 779.490143690155
+        y: 985.2908903035461
+      positionAbsolute:
+        x: 779.490143690155
+        y: 985.2908903035461
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: '{{#1772296899518.text#}}'
+            type: bearer
+          type: api-key
+        body:
+          data: []
+          type: none
+        headers: ''
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 5
+          retry_enabled: true
+          retry_interval: 5000
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Start
+        type: http-request
+        url: https://api.ilovepdf.com/v1/start/merge
+        variables: []
+      height: 138
+      id: '1772296930747'
+      position:
+        x: 477.49014369015504
+        y: 1166.3654074691399
+      positionAbsolute:
+        x: 477.49014369015504
+        y: 1166.3654074691399
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: f392028f-7e73-4ed5-a814-3990c15c50c5
+          role: system
+          text: 'You will receive a body message. Extract the server url and delete
+            title and punctuation.
+
+
+            Example:
+
+            Body message:{\"server\":\"api102.ilovepdf.com\",\"task\":\"g27d4mrsg3ztmnzAgm5d3njAghnqx1ql8tt7l67p3wpfwjjlcy0gAwhjgnqvdr6qj80tsvt0f7025wsfx5vs211f9Azcwz2czlmkl4m7A5386g1strslA22tv4mmrhtc03Az5bxz2z185pkslsv982p4yy\",\"remaining_credits\":2500}
+
+            Return: api102.ilovepdf.com
+
+
+            Body message is here: {{#1772296930747.body#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Extract Server URL
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772296959500'
+      position:
+        x: 779.490143690155
+        y: 1107.614575924557
+      positionAbsolute:
+        x: 779.490143690155
+        y: 1107.614575924557
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: b8d44f22-fa74-453e-a6ae-9ca468db3ac3
+          role: system
+          text: 'You will receive a body message. Extract the task and delete title
+            and punctuation.
+
+
+            Example:
+
+            Body message:{\"server\":\"api102.ilovepdf.com\",\"task\":\"g27d4mrsg3ztmnzAgm5d3njAghnqx1ql8tt7l67p3wpfwjjlcy0gAwhjgnqvdr6qj80tsvt0f7025wsfx5vs211f9Azcwz2czlmkl4m7A5386g1strslA22tv4mmrhtc03Az5bxz2z185pkslsv982p4yy\",\"remaining_credits\":2500}
+
+            Return: g27d4mrsg3ztmnzAgm5d3njAghnqx1ql8tt7l67p3wpfwjjlcy0gAwhjgnqvdr6qj80tsvt0f7025wsfx5vs211f9Azcwz2czlmkl4m7A5386g1strslA22tv4mmrhtc03Az5bxz2z185pkslsv982p4yy
+
+
+            Body message is here: {{#1772296930747.body#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Extract Task
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772296985368'
+      position:
+        x: 779.490143690155
+        y: 1228.9446657852266
+      positionAbsolute:
+        x: 779.490143690155
+        y: 1228.9446657852266
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 245
+        is_parallel: true
+        iterator_input_type: array[file]
+        iterator_selector:
+        - '1772287129940'
+        - Section_documents
+        output_selector:
+        - '1772297020170'
+        - body
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1772297006911start
+        title: Upload Section Documents
+        type: iteration
+        width: 386
+      height: 245
+      id: '1772297006911'
+      position:
+        x: 1120.8970571951324
+        y: 1030.981112810764
+      positionAbsolute:
+        x: 1120.8970571951324
+        y: 1030.981112810764
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 386
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1772297006911start
+      parentId: '1772297006911'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 1144.8970571951324
+        y: 1098.981112810764
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        authorization:
+          config:
+            api_key: '{{#1772296899518.text#}}'
+            type: bearer
+          type: api-key
+        body:
+          data:
+          - id: key-value-438
+            key: task
+            type: text
+            value: '{{#1772296985368.text#}}'
+          - file:
+            - '1772297006911'
+            - item
+            id: key-value-467
+            key: file
+            type: file
+            value: ''
+          - id: key-value-586
+            key: ''
+            type: text
+            value: ''
+          type: form-data
+        headers: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772297006911'
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 10
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Upload
+        type: http-request
+        url: https://{{#1772296959500.text#}}/v1/upload
+        variables: []
+      height: 157
+      id: '1772297020170'
+      parentId: '1772297006911'
+      position:
+        x: 128
+        y: 65
+      positionAbsolute:
+        x: 1248.8970571951324
+        y: 1095.981112810764
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: bd374bae-585c-48f1-9635-44fec3ec6ea3
+          role: system
+          text: 'You will receive two inputs:
+
+            A JSON string under the key "output" that contains an array of JSON objects
+            (as strings) where each object has a server_filename field. Example:
+
+            {
+
+            "output": [
+
+            "{"server_filename":"c1c97c02c9c72bffe2c4b658fceb47f727b549f7634e1aa2b9b7f6d77819f716.pdf"}",
+
+            "{"server_filename":"ee4740d09358b34a42989e55944cb91085bc71be83361c4284c8585c29dc8cfc.pdf"}",
+
+            "{"server_filename":"28bddde8ecebf6cbf72c2dd82bf7d66f305dc06edeb76a0cedc01c4e0e7a7c7e.pdf"}"
+
+            ]
+
+            }
+
+            A plain text block (newline-separated) that lists the original filenames
+            in the processing order, one filename per line. Example:
+
+            RECO4015-2526S2-CaseStudyGroup-IndvAssignmentBrief.r2 (1).pdf
+
+            Coursework_v2 (1).pdf
+
+            RECO4015-2526S2-IndvAssignmentMap (3).pdf
+
+            Task:
+
+            Parse the JSON string in input (key "output") to extract the server_filename
+            values in order.
+
+            Parse the newline-separated text to extract the original filenames in
+            order.
+
+            Create an array named ordered_files where each item is an object with
+            these fields:
+
+            file_id: a sequential id in the format "file_01", "file_02", ... (two-digit,
+            zero-padded)
+
+            server_filename: the server_filename from the JSON (preserve exactly)
+
+            filename: the corresponding original filename from the text (preserve
+            exactly)
+
+            Important rules:
+
+            Match files strictly by order: the first server_filename pairs with the
+            first filename line, the second with the second, etc.
+
+            Preserve exact strings (do not trim or alter filenames or server_filenames
+            except to remove surrounding quotes if present).
+
+            If the number of server_filenames and filenames differ, return an error
+            object (see format below).
+
+            Output must be valid JSON and nothing else (no commentary, no markdown).
+
+            Successful output format (example):
+
+            {
+
+            "ordered_files": [
+
+            { "file_id": "file_01", "server_filename": "c1c97c02c9c72bffe2c4b658fceb47f727b549f7634e1aa2b9b7f6d77819f716.pdf",
+            "filename": "RECO4015-2526S2-CaseStudyGroup-IndvAssignmentBrief.r2 (1).pdf"
+            },
+
+            { "file_id": "file_02", "server_filename": "ee4740d09358b34a42989e55944cb91085bc71be83361c4284c8585c29dc8cfc.pdf",
+            "filename": "Coursework_v2 (1).pdf" },
+
+            { "file_id": "file_03", "server_filename": "28bddde8ecebf6cbf72c2dd82bf7d66f305dc06edeb76a0cedc01c4e0e7a7c7e.pdf",
+            "filename": "RECO4015-2526S2-IndvAssignmentMap (3).pdf" }
+
+            ]
+
+            }
+
+            Error output format (when counts mismatch):
+
+            {
+
+            "error": "count_mismatch",
+
+            "server_count": <number_of_server_filenames>,
+
+            "filename_count": <number_of_filenames>
+
+            }
+
+            Edge cases & parsing notes:
+
+            input JSON may contain server_filename strings wrapped inside string quotes
+            or escaped; handle typical JSON string encoding.
+
+            filenames text may contain blank lines — ignore empty lines when counting
+            and pairing.
+
+            Ensure file_id uses two-digit zero-padded numbering (file_01, file_02,
+            ...).
+
+            The output JSON should not include trailing commas.
+
+            End of prompt.
+
+            You can adapt small wording if your LLM node requires a different instruction
+            style, but keep the parsing rules and exact output format unchanged.
+
+
+            JSON input: {{#1772297006911.output#}}
+
+            Plain text input: {{#1772296789655.output#}}'
+        retry_config:
+          max_retries: 5
+          retry_enabled: true
+          retry_interval: 5000
+        selected: false
+        title: Rearrange File ID
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772297137556'
+      position:
+        x: 1074.2845014272402
+        y: 773.7730925567305
+      positionAbsolute:
+        x: 1074.2845014272402
+        y: 773.7730925567305
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 22d8eabb-a5fd-483c-b895-e50c52c608c7
+          role: system
+          text: 'You will receive two JSON objects as input:
+
+            "TOC file" — a JSON with key "ordered_files" whose items are objects containing:
+
+            toc_title (string)
+
+            file_id (string)
+
+            "server file" — a JSON with key "ordered_files" whose items are objects
+            containing:
+
+            file_id (string)
+
+            server_filename (string)
+
+            filename (string)
+
+            Task:
+
+            For each item in TOC file.ordered_files (in the exact original order),
+            find the object in server file.ordered_files with the same file_id.
+
+            Produce an output JSON array (or a JSON object with a single key "ordered_files")
+            where each TOC entry is augmented with the matching server_filename and
+            filename from the server file.
+
+            Do NOT change the relative order of items from the TOC file.
+
+            If a TOC file entry has no matching file_id in the server file, include
+            the TOC entry unchanged but add server_filename and filename with null
+            values.
+
+            If the server file contains file_id entries not present in the TOC file,
+            ignore them.
+
+            The output must be valid JSON only — do not include extra text, explanations,
+            or markup.
+
+            Output format requirements:
+
+            Return a single JSON object with key "ordered_files" whose value is an
+            array of objects.
+
+            Each object must include exactly these keys (in any order is fine): toc_title,
+            file_id, server_filename, filename.
+
+            server_filename and filename must be strings or null.
+
+            Example inputs (for reference only — do not hardcode):
+
+            TOC file:
+
+            {
+
+            "ordered_files": [
+
+            { "toc_title": "Articles of Agreement and Conditions of Sub-Contract",
+            "file_id": "file_03" },
+
+            { "toc_title": "Articles of Agreement and the Sub-Contract General Conditions",
+            "file_id": "file_01" },
+
+            { "toc_title": "Index to the Sub-Contract General Conditions itoxi", "file_id":
+            "file_02" }
+
+            ]
+
+            }
+
+            Server file:
+
+            {
+
+            "ordered_files": [
+
+            {
+
+            "file_id": "file_01",
+
+            "server_filename": "3965397c851b104b2eeaefc560bca325fd4da86535a9d2c82dd522f1ac74563c.pdf",
+
+            "filename": "6972 (Lift) - Full Set-1 2.pdf"
+
+            },
+
+            {
+
+            "file_id": "file_02",
+
+            "server_filename": "ada5bca93da9b3fd0737f72db0148c129b85a972663c0961ceb4c248d4438115.pdf",
+
+            "filename": "6972 (Lift) - Full Set-1.pdf"
+
+            },
+
+            {
+
+            "file_id": "file_03",
+
+            "server_filename": "e1feb98e8643a764c05d0aaa9935038a657d4dec95790e798e97296a92e0932b.pdf",
+
+            "filename": "6972 (Lift) - Full Set-2 2.pdf"
+
+            }
+
+            ]
+
+            }
+
+            Example output (for the above inputs):
+
+            {
+
+            "ordered_files": [
+
+            {
+
+            "toc_title": "Articles of Agreement and Conditions of Sub-Contract",
+
+            "file_id": "file_03",
+
+            "server_filename": "e1feb98e8643a764c05d0aaa9935038a657d4dec95790e798e97296a92e0932b.pdf",
+
+            "filename": "6972 (Lift) - Full Set-2 2.pdf"
+
+            },
+
+            {
+
+            "toc_title": "Articles of Agreement and the Sub-Contract General Conditions",
+
+            "file_id": "file_01",
+
+            "server_filename": "3965397c851b104b2eeaefc560bca325fd4da86535a9d2c82dd522f1ac74563c.pdf",
+
+            "filename": "6972 (Lift) - Full Set-1 2.pdf"
+
+            },
+
+            {
+
+            "toc_title": "Index to the Sub-Contract General Conditions itoxi",
+
+            "file_id": "file_02",
+
+            "server_filename": "ada5bca93da9b3fd0737f72db0148c129b85a972663c0961ceb4c248d4438115.pdf",
+
+            "filename": "6972 (Lift) - Full Set-1.pdf"
+
+            }
+
+            ]
+
+            }
+
+
+            TOC file:{{#1772296744760.text#}}
+
+            Server file: {{#1772297137556.text#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Merge TOC and Server_filename
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772297264348'
+      position:
+        x: 1430.3195078474055
+        y: 511.2314388459471
+      positionAbsolute:
+        x: 1430.3195078474055
+        y: 511.2314388459471
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: dc38423a-486b-487d-9dc6-acb5654686e7
+          role: system
+          text: 'You will receive a single input: an array of objects. Each object
+            contains these keys:
+
+            toc_title
+
+            file_id
+
+            server_filename
+
+            filename
+
+            Task (step-by-step):
+
+            Remove any object whose file_id, server_filename, or filename is/are null
+            (exact null). Do not include those objects in the output at all.
+
+            For the remaining objects (preserve their original order), remove the
+            keys toc_title and file_id.
+
+            Return an array of objects where each object contains only:
+
+            server_filename (string or null)
+
+            filename (string or null)
+
+            Output requirements:
+
+            Return valid JSON only — do not include any explanatory text, markup,
+            or extra keys.
+
+            The top-level value must be the resulting array (not wrapped in another
+            object).
+
+            Preserve the original order of the objects that remain after step 1.
+
+            If a remaining object is missing server_filename or filename, include
+            those keys with a null value.
+
+            Do not include"[ ]" in the output.
+
+
+            Examples (for reference only):
+
+            Example input:
+
+            [
+
+            {
+
+            "toc_title": "Title A",
+
+            "file_id": "file_01",
+
+            "server_filename": "abc.pdf",
+
+            "filename": "A.pdf"
+
+            },
+
+            {
+
+            "toc_title": "Title B",
+
+            "file_id": null,
+
+            "server_filename": "def.pdf",
+
+            "filename": "B.pdf"
+
+            },
+
+            {
+
+            "toc_title": "Title C",
+
+            "file_id": "file_03",
+
+            "server_filename": "ghi",
+
+            "filename": "C.pdf"
+
+            }
+
+            ]
+
+            Expected output:
+
+            { "server_filename": "abc.pdf", "filename": "A.pdf" },
+
+            { "server_filename": ghi, "filename": "C.pdf" }
+
+
+
+            '
+        - id: 332e9e36-1d54-45b9-b936-5034a004e45d
+          role: user
+          text: 'Finish the task. Return JSON array without "[]"
+
+
+            Array of object: {{#1772297264348.text#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Rearranged Server_filename
+        type: llm
+        vision:
+          enabled: false
+      height: 118
+      id: '1772297300953'
+      position:
+        x: 1737.2563030846575
+        y: 511.2314388459471
+      positionAbsolute:
+        x: 1737.2563030846575
+        y: 511.2314388459471
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: '{{#1772296899518.text#}}'
+            type: bearer
+          type: api-key
+        body:
+          data:
+          - id: key-value-825
+            key: ''
+            type: text
+            value: "{\n  \"task\": \"{{#1772296985368.text#}}\",\n  \"tool\": \"merge\"\
+              ,\n  \"files\":  [\n{{#1775381994992.text#}}\n  ]\n}"
+          type: json
+        headers: Content-type:application/json
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 10
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Process
+        type: http-request
+        url: https://{{#1772296959500.text#}}/v1/process
+        variables: []
+      height: 157
+      id: '1772297342352'
+      position:
+        x: 2423.3104688958992
+        y: 511.2314388459471
+      positionAbsolute:
+        x: 2423.3104688958992
+        y: 511.2314388459471
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: '{{#1772296899518.text#}}'
+            type: bearer
+          type: api-key
+        body:
+          data: []
+          type: none
+        headers: ''
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 10
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Download
+        type: http-request
+        url: https://{{#1772296959500.text#}}/v1/download/{{#1772296985368.text#}}
+        variables: []
+      height: 160
+      id: '1772297451524'
+      position:
+        x: 2059.713332307515
+        y: 754.9855965688616
+      positionAbsolute:
+        x: 2059.713332307515
+        y: 754.9855965688616
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        outputs:
+        - value_selector:
+          - '1772297451524'
+          - files
+          value_type: array[file]
+          variable: files
+        selected: false
+        title: Output
+        type: end
+      height: 88
+      id: '1772297558503'
+      position:
+        x: 2423.3104688958992
+        y: 754.9855965688616
+      positionAbsolute:
+        x: 2423.3104688958992
+        y: 754.9855965688616
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        isInIteration: true
+        isInLoop: false
+        is_team_authorization: true
+        iteration_id: '1772287431145'
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: PDF file content
+            ja_JP: PDF file content
+            pt_BR: PDF file content
+            zh_Hans: PDF 文件内容
+          label:
+            en_US: PDF Content
+            ja_JP: PDF Content
+            pt_BR: PDF Content
+            zh_Hans: PDF 内容
+          llm_description: PDF file content in base64 encoded format
+          max: null
+          min: null
+          name: pdf_content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: file
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Page number to extract (starting from 1)
+            ja_JP: Page number to extract (starting from 1)
+            pt_BR: Page number to extract (starting from 1)
+            zh_Hans: 要提取的页码（从1开始）
+          label:
+            en_US: Page Number
+            ja_JP: Page Number
+            pt_BR: Page Number
+            zh_Hans: 页码
+          llm_description: Specific page number to extract from the PDF. If not provided,
+            all pages will be extracted.
+          max: null
+          min: null
+          name: page_number
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: number
+        params:
+          page_number: ''
+          pdf_content: ''
+        plugin_id: kalochin/pdf_process
+        plugin_unique_identifier: kalochin/pdf_process:1.0.0@052e5c10b080c86e949055c64575647737c2e14947b0b1bc87a44d1c6ed0f1de
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=eb212de4-1e40-4d54-a5a4-7b61b9bec0dc&filename=5d93e448e2a5ceca3b5e805eea91c7605ac2cd40a718f32bcf8a54666a800e84.svg
+        provider_id: kalochin/pdf_process/pdf_process
+        provider_name: kalochin/pdf_process/pdf_process
+        provider_type: builtin
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: PDF Single Page Extractor
+        tool_configurations: {}
+        tool_description: A tool for extracting PDF content
+        tool_label: PDF Single Page Extractor
+        tool_name: pdf_single_page_extractor
+        tool_node_version: '2'
+        tool_parameters:
+          page_number:
+            type: constant
+            value: 1
+          pdf_content:
+            type: variable
+            value:
+            - '1772287431145'
+            - item
+        type: tool
+      height: 82
+      id: '1772639877001'
+      parentId: '1772287431145'
+      position:
+        x: 128
+        y: 68
+      positionAbsolute:
+        x: 575.8914245380868
+        y: 371
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        is_team_authorization: true
+        iteration_id: '1772287431145'
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Upload a PDF file to extract text and convert to Markdown
+            ja_JP: Upload a PDF file to extract text and convert to Markdown
+            pt_BR: Upload a PDF file to extract text and convert to Markdown
+            zh_Hans: 上传 PDF 文件以提取文本并转换为 Markdown
+          label:
+            en_US: PDF File
+            ja_JP: PDF File
+            pt_BR: PDF File
+            zh_Hans: PDF 文件
+          llm_description: The PDF file to process with OCR and convert to Markdown
+            format
+          max: null
+          min: null
+          name: upload_file
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: file
+        params:
+          upload_file: ''
+        plugin_id: kenwood/gpt4o_ocr_pdf
+        plugin_unique_identifier: kenwood/gpt4o_ocr_pdf:0.0.2@5f114c73bd0ce4172e483c5e4b609df8b6fb5e1932244ba4e813dc8d1b209ab7
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=eb212de4-1e40-4d54-a5a4-7b61b9bec0dc&filename=0a8954a94486a0d810b6a16eee20210cc3aa2efaf61cc31d3b2f399d510adb44.svg
+        provider_id: kenwood/gpt4o_ocr_pdf/gpt4o_ocr_pdf
+        provider_name: kenwood/gpt4o_ocr_pdf/gpt4o_ocr_pdf
+        provider_type: builtin
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: GPT-4o PDF OCR to Markdown
+        tool_configurations: {}
+        tool_description: Extract text from PDF files using GPT-4o's OCR capabilities
+          and convert to Markdown format
+        tool_label: GPT-4o PDF OCR to Markdown
+        tool_name: gpt4o_ocr_pdf
+        tool_node_version: '2'
+        tool_parameters:
+          upload_file:
+            type: variable
+            value:
+            - '1772639877001'
+            - files
+        type: tool
+      height: 82
+      id: '1772639888818'
+      parentId: '1772287431145'
+      position:
+        x: 430
+        y: 68
+      positionAbsolute:
+        x: 877.8914245380868
+        y: 371
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Upload a PDF file to extract text and convert to Markdown
+            ja_JP: Upload a PDF file to extract text and convert to Markdown
+            pt_BR: Upload a PDF file to extract text and convert to Markdown
+            zh_Hans: 上传 PDF 文件以提取文本并转换为 Markdown
+          label:
+            en_US: PDF File
+            ja_JP: PDF File
+            pt_BR: PDF File
+            zh_Hans: PDF 文件
+          llm_description: The PDF file to process with OCR and convert to Markdown
+            format
+          max: null
+          min: null
+          name: upload_file
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: file
+        params:
+          upload_file: ''
+        plugin_id: kenwood/gpt4o_ocr_pdf
+        plugin_unique_identifier: kenwood/gpt4o_ocr_pdf:0.0.2@5f114c73bd0ce4172e483c5e4b609df8b6fb5e1932244ba4e813dc8d1b209ab7
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=eb212de4-1e40-4d54-a5a4-7b61b9bec0dc&filename=0a8954a94486a0d810b6a16eee20210cc3aa2efaf61cc31d3b2f399d510adb44.svg
+        provider_id: kenwood/gpt4o_ocr_pdf/gpt4o_ocr_pdf
+        provider_name: kenwood/gpt4o_ocr_pdf/gpt4o_ocr_pdf
+        provider_type: builtin
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Parse Content Pages
+        tool_configurations: {}
+        tool_description: Extract text from PDF files using GPT-4o's OCR capabilities
+          and convert to Markdown format
+        tool_label: GPT-4o PDF OCR to Markdown
+        tool_name: gpt4o_ocr_pdf
+        tool_node_version: '2'
+        tool_parameters:
+          upload_file:
+            type: variable
+            value:
+            - '1772287129940'
+            - Content_pages
+        type: tool
+      height: 82
+      id: '1772689817410'
+      position:
+        x: 559.5176918763502
+        y: 72.60572926148316
+      positionAbsolute:
+        x: 559.5176918763502
+        y: 72.60572926148316
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1772287503357'
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 80339d8b-c4e9-4ca5-968f-10bc6ba4a1bf
+          role: system
+          text: "System:\n\nYou are an agent aiming to identify the section title\
+            \ of a markdown text. You will receive a JSON and a a section title list.\
+            \ The JSON including the extracted_title and markdown of a pdf document\
+            \ and a section title list. If the \"extracted_title\" is NOT \"null\"\
+            , do not do anything, and return the exact JSON you receive. Only when\
+            \ the extracted_title is \"null\", try to identify the section title based\
+            \ on the following instruction and the section title list.\n\nOutput must\
+            \ be valid JSON only.\n\nUser:\nIf \"extracted_title\" the JSON is NOT\
+            \ \"null\", skip the following instruction, and return the original JSON\
+            \ you received.\nDo not generate any title other than the titles shown\
+            \ in the section title list.\nFor the section title named \"ARTICLES OF\
+            \ AGREEMENT AND CONDITIONS OF SUB-CONTRACT\" or similar and not ending\
+            \ with  '.0', the first page will usually consist of the words \"Sub-Contract\"\
+            \ or \"Nominated Sub-Contract\", \"Hong Kong\", \"Standard Form of Building\
+            \ Contract\" or similar.\nFor the section title named \"SUB-CONTRACT CORRESPONDENCE\"\
+            \ or similar and not ending with  '.0', the first page will usually consist\
+            \ of a letter or details of a list of letters.\n\nRules:\nOutput JSON\
+            \ with keys: \"file_id\", \"extracted_title\" and \"evidence\".\n\"evidence\"\
+            \ must be a short exact excerpt from the text that shows the title.\n\
+            If you cannot find a clear title, set extracted_title to \"null\" and\
+            \ explain in evidence.\n\nOutput as JSON in this format:\n  {\n    \"\
+            file_id\": \"...\",\n    \"first_page_text\": \"...\",\n    \"extracted_title\"\
+            : \"...\",\n    \"evidence\": \"...\"\n  }\n/\nProcessed pdf document:\
+            \ {{#1772287537313.text#}}\nSection title list: {{#1772287150945.text#}}\n"
+        selected: false
+        title: Extract Section Titles (Exact Title Not Shown)
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1772720032278'
+      parentId: '1772287503357'
+      position:
+        x: 429.2588988734078
+        y: 66.74110112659224
+      positionAbsolute:
+        x: 1838.8077235269839
+        y: 139.3468303880754
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 8b34c45b-c61a-4bfb-aa14-a7f93c667258
+          role: system
+          text: 'I only want the file name of the pdf. No need to open the file or
+            get the access. Return the filename.
+
+
+            PDF:  {{#1772287129940.Cover_page.name#}}'
+        selected: false
+        title: Extract Filenames (Cover Page)
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1772720659786'
+      position:
+        x: 477.49014369015504
+        y: 1354.2908903035457
+      positionAbsolute:
+        x: 477.49014369015504
+        y: 1354.2908903035457
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 21421dfa-c5c6-4ff2-9cbd-87e0ecfb4469
+          role: system
+          text: 'I only want the file name of the pdf. No need to open the file or
+            get the access. Return the filename.
+
+
+            PDF:  {{#1772287129940.Content_pages.name#}}'
+        selected: false
+        title: Extract Filename (Content Page)
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1772720708146'
+      position:
+        x: 779.490143690155
+        y: 1354.2908903035457
+      positionAbsolute:
+        x: 779.490143690155
+        y: 1354.2908903035457
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: '{{#1772296899518.text#}}'
+            type: bearer
+          type: api-key
+        body:
+          data:
+          - id: key-value-235
+            key: task
+            type: text
+            value: '{{#1772296985368.text#}}'
+          - file:
+            - '1772287129940'
+            - Cover_page
+            id: key-value-280
+            key: file
+            type: file
+            value: /
+          - id: key-value-418
+            key: ''
+            type: text
+            value: ''
+          type: form-data
+        headers: ''
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Upload Cover Page
+        type: http-request
+        url: https://{{#1772296959500.text#}}/v1/upload
+        variables: []
+      height: 157
+      id: '1772720780372'
+      position:
+        x: 1115.7973493702502
+        y: 1354.2908903035457
+      positionAbsolute:
+        x: 1115.7973493702502
+        y: 1354.2908903035457
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 55650d8a-a7c0-44b6-ae17-f8c5e3e8d40f
+          role: system
+          text: "You will receive three inputs:\nTwo JSON string for document A and\
+            \ document B respectly. Under the key \"output\" each contains a JSON\
+            \ object(as strings) where each object has a server_filename field. \n\
+            Example:\n{\n\"output\": [\n\"{ \"server_filename\":\"c1c97c02c9c72bffe2c4b658fceb47f727b549f7634e1aa2b9b7f6d77819f716.pdf\"\
+            }\"\n]\n}\nTwo plain text that list the original filenames of document\
+            \ A and document B respectively.\nExample:\nRECO4015-2526S2-CaseStudyGroup-IndvAssignmentBrief.r2\
+            \ (1).pdf\nCoursework_v2 (1).pdf\n\nTask:\nParse the JSON string in input\
+            \ (key \"output\") to extract the server_filename values in order.\nParse\
+            \ the newline-separated text to extract the original filenames in order.\n\
+            Create an array with the following four fields:\nserver_filename: the\
+            \ server_filename from the JSON of document A (preserve exactly)\nfilename:\
+            \ the corresponding original filename from the text of document A (preserve\
+            \ exactly)\nserver_filename: the server_filename from the JSON of document\
+            \ B (preserve exactly)\nfilename: the corresponding original filename\
+            \ from the text of document B (preserve exactly)\n\nImportant rules:\n\
+            JSON from Document A must be the first server_filename, while plain text\
+            \ from Document B must be the second server_filename.\nplain text from\
+            \ Document A must be the first filename, while plain text from Document\
+            \ B must be the second filename.\nPreserve exact strings (do not trim\
+            \ or alter filenames or server_filenames except to remove surrounding\
+            \ quotes if present).\nOutput must be valid JSON and nothing else (no\
+            \ commentary, no markdown).\nDo not include\"[ ]\" in the output.\nAdd\
+            \ a comma at the end of the ouput.\n\nSuccessful output format (example):\n\
+            { \"server_filename\": \"c1c97c02c9c72bffe2c4b658fceb47f727b549f7634e1aa2b9b7f6d77819f716.pdf\"\
+            , \"filename\": \"RECO4015-2526S2-CaseStudyGroup-IndvAssignmentBrief.r2\
+            \ (1).pdf\" },\n{ \"server_filename\": \"28bddde8ecebf6cbf72c2dd82bf7d66f305dc06edeb76a0cedc01c4e0e7a7c7e.pdf\"\
+            , \"filename\": \"Coursework_v2 (1).pdf\" },\n\nJSON string from Document\
+            \ A: {{#1772720780372.body#}}\nJSON string from Document B: {{#17727236238260.body#}}\n\
+            plain text from Document A: {{#1772720659786.text#}}\nplain text from\
+            \ Document B: {{#1772720708146.text#}}"
+        selected: false
+        title: Merge Cover Page and Content Page Filename
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1772720936990'
+      position:
+        x: 1759.7133323075152
+        y: 1354.2908903035457
+      positionAbsolute:
+        x: 1759.7133323075152
+        y: 1354.2908903035457
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: '{{#1772296899518.text#}}'
+            type: bearer
+          type: api-key
+        body:
+          data:
+          - id: key-value-235
+            key: task
+            type: text
+            value: '{{#1772296985368.text#}}'
+          - file:
+            - '1772287129940'
+            - Content_pages
+            id: key-value-347
+            key: file
+            type: file
+            value: ''
+          - id: key-value-418
+            key: ''
+            type: text
+            value: ''
+          type: form-data
+        headers: ''
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Upload Content Page
+        type: http-request
+        url: https://{{#1772296959500.text#}}/v1/upload
+        variables: []
+      height: 157
+      id: '17727236238260'
+      position:
+        x: 1430.3195078474055
+        y: 1354.2908903035457
+      positionAbsolute:
+        x: 1430.3195078474055
+        y: 1354.2908903035457
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-5-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 68f1f702-9d09-4064-8468-0e9fda1de271
+          role: system
+          text: "You will receive two JSON array. Delete all \"[]\" from the input.\
+            \ Make them becomes item with {}, {}, {}, \nGroup the two JSON array into\
+            \ a single array without \"[]\".\nRemain original order. Do not modify\
+            \ any text or value."
+        - id: a7a10555-cd3e-457a-bd1e-49ea7576bfb9
+          role: user
+          text: 'First JSON array: {{#1772720936990.text#}}
+
+            Second JSON array: {{#1772297300953.text#}}'
+        selected: false
+        title: LLM 15
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775381994992'
+      position:
+        x: 2123.3104688958992
+        y: 511.2314388459471
+      positionAbsolute:
+        x: 2123.3104688958992
+        y: 511.2314388459471
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 48.894266049414
+      y: 7.529930566345229
+      zoom: 0.659753955386449
+  rag_pipeline_variables: []
